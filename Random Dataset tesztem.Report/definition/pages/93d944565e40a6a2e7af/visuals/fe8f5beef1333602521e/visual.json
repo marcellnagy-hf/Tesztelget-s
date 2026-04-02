@@ -2,14 +2,14 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "fe8f5beef1333602521e",
   "position": {
-    "x": 333.57312521208007,
-    "y": 15.884434533908575,
+    "x": 334.17721518987338,
+    "y": 66.835443037974684,
     "z": 0,
-    "height": 617.50739250569586,
-    "width": 659.2040331572058
+    "height": 567.08860759493666,
+    "width": 812.15189873417717
   },
   "visual": {
-    "visualType": "clusteredBarChart",
+    "visualType": "columnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -26,7 +26,8 @@
                 }
               },
               "queryRef": "MOCK_DATA.email",
-              "nativeQueryRef": "email"
+              "nativeQueryRef": "email",
+              "active": true
             }
           ]
         },
@@ -77,6 +78,26 @@
         ]
       }
     },
+    "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "visualContainerObjects": {
       "title": [
         {
@@ -97,7 +118,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "d600f27a2a916c0819e1",
+        "name": "8c7c27876d554687e3a6",
         "field": {
           "Column": {
             "Expression": {
@@ -111,7 +132,7 @@
         "type": "Categorical"
       },
       {
-        "name": "0ec500b08118b2c9bfc4",
+        "name": "2f82040c1748a322fe00",
         "field": {
           "Aggregation": {
             "Expression": {
