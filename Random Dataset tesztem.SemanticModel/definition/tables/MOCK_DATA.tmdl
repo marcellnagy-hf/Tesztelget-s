@@ -1,0 +1,64 @@
+table MOCK_DATA
+	lineageTag: 50dfec67-e03f-436a-bf8c-988d2367c086
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: 166da4ab-403d-4250-908f-0aa379b1b11d
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_name
+		dataType: string
+		lineageTag: a92fba1e-8966-47da-853f-3388e4b71b2d
+		summarizeBy: none
+		sourceColumn: first_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_name
+		dataType: string
+		lineageTag: 6918edc5-a153-427b-8b91-50c6e0fa74ab
+		summarizeBy: none
+		sourceColumn: last_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column email
+		dataType: string
+		lineageTag: d65ce504-4962-46b0-9c96-04334e951538
+		summarizeBy: none
+		sourceColumn: email
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: 5fbaad24-993a-4e4e-a874-77b77e289e7d
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column ip_address
+		dataType: string
+		lineageTag: b3e5c4d2-254d-4826-b9cc-f61989b06da6
+		summarizeBy: none
+		sourceColumn: ip_address
+
+		annotation SummarizationSetBy = Automatic
+
+	partition MOCK_DATA = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Teszt Github Projekt\Tesztelget-s\MOCK_DATA.csv"),[Delimiter=",", Columns=6, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"id", Int64.Type}, {"first_name", type text}, {"last_name", type text}, {"email", type text}, {"gender", type text}, {"ip_address", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

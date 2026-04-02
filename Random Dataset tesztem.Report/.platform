@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Random Dataset tesztem"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "afbd388d-aee0-47d7-8b8b-de86755ecdbf"
+  }
+}

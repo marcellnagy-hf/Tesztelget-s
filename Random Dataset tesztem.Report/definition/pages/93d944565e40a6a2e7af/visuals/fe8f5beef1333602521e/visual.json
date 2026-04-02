@@ -1,0 +1,134 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "fe8f5beef1333602521e",
+  "position": {
+    "x": 333.57312521208007,
+    "y": 15.884434533908575,
+    "z": 0,
+    "height": 617.50739250569586,
+    "width": 659.2040331572058
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MOCK_DATA"
+                    }
+                  },
+                  "Property": "email"
+                }
+              },
+              "queryRef": "MOCK_DATA.email",
+              "nativeQueryRef": "email"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "MOCK_DATA"
+                        }
+                      },
+                      "Property": "id"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(MOCK_DATA.id)",
+              "nativeQueryRef": "Sum of id"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "MOCK_DATA"
+                      }
+                    },
+                    "Property": "id"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d600f27a2a916c0819e1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MOCK_DATA"
+              }
+            },
+            "Property": "email"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0ec500b08118b2c9bfc4",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "MOCK_DATA"
+                  }
+                },
+                "Property": "id"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
